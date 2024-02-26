@@ -1,5 +1,5 @@
 const sendCartToWhatsapp = ({ order, cart_link }) => {
-  const sellerPhonenumber = "+9647507250752";
+  const sellerPhonenumber = "write your number";
   const customerPhonenumber = `*phone number:* ${order.order_phonenumber}%0a`;
   const city = `*city:* ${order.order_city}%0a`;
   const totalItems = `*total Items:* ${order.order_total_qty}%0a`;
