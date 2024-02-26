@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Label from "../../../components/Label";
 import Select from "../../../components/Select";
 import Input from "../../../components/Input";
@@ -8,13 +8,10 @@ import { selectOrderItemTotals } from "../../orderItems/orderItemsSlice";
 import CurrencyFormatter from "../../../components/CurrencyFormatter";
 import {
   useDeleteOrderMutation,
-  useGetOrderByIdQuery,
   useUpdateOrderMutation,
 } from "../ordersApiSlice";
-import Cookies from "js-cookie";
-import sendCartToWhatsapp from "../../../services/sendCartToWahtsapp";
-import { selectOrderById } from "../ordersSlice";
-import { useNavigate, useParams } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 
 const OrderForm = ({ orderSelector }) => {
   const citiesTowns = {

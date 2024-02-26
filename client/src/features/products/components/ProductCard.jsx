@@ -18,11 +18,11 @@ const ProductCard = ({ product }) => {
 
   return (
     <Link to={path}>
-      <div className="mb-4 w-full h-142 grid grid-rows-12 bg-white rounded-md overflow-hidden shadow-md">
-        <div className="row-span-10">
+      <div className="mb-4 w-full h-96 sm:h-142 grid grid-rows-12 bg-white rounded-md overflow-hidden shadow-md">
+        <div className="row-span-9 sm:row-span-10 flex justify-center items-center">
           {product_file_uri ? (
             <img
-              className="w-max h-full bg-gray-50 object-cover object-center overflow-hidden "
+              className="w-full h-full bg-gray-50 object-contain sm:object-cover object-center overflow-hidden "
               src={`/api/files-resized/${file_name}?h=500`}
               alt={product_name}
             />
@@ -33,9 +33,9 @@ const ProductCard = ({ product }) => {
           )}
         </div>
 
-        <div className="p-2 row-span-2">
+        <div className="p-2 row-span-3 sm:row-span-2">
           <p className="text-gray-600 text-sm font-semibold">Tech Haven</p>
-          <p className="pt-2 text-blue-700 font-bold text-lg mt-2">
+          <p className="mt-2 pt-2 text-blue-700 font-bold text-lg ">
             <CurrencyFormatter amount={product_price} currency="IQD" />
           </p>
         </div>

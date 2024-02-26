@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { seState } from "react";
 import {
   selectAllCategories,
-  selectCategoryById,
   useDeleteCategoryMutation,
   useUpdateCategoryMutation,
 } from "./categoriesSlice";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Modal from "../../components/Modal";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 

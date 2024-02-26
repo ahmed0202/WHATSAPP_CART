@@ -3,7 +3,6 @@ import { selectAllProducts, selectProductTotal } from "./productsSlice";
 import { useSelector } from "react-redux";
 import ProductCard from "./components/ProductCard";
 import { useLocation } from "react-router-dom";
-import { selectCurrentUser } from "../auth/authSlice";
 
 const ProductList = () => {
   const location = useLocation();
@@ -16,7 +15,6 @@ const ProductList = () => {
         categoryName.slice(1).toLowerCase()
       }`;
 
-  const userEmail = useSelector(selectCurrentUser);
   const products = useSelector(selectAllProducts);
   const totalProduct = useSelector(selectProductTotal);
 
@@ -30,7 +28,7 @@ const ProductList = () => {
         <h2 className="text-2xl">{currentCategory}</h2>
         <p className="py-4 text-gray-400">{totalProduct} items are listed</p>
       </div>
-      <div className="py-6 grid grid-cols-2 sm:grid-cols-4 2xl:grid-cols-8 gap-4">
+      <div className="py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-8 gap-4">
         {renderProduct}
       </div>
     </div>

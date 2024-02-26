@@ -8,7 +8,6 @@ import DropZoneCard from "../../components/DropZoneCard";
 import FilePreviewCard from "../../components/FilePreviewCard";
 import { useCreateProductMutation } from "./productsSlice";
 import Select from "../../components/Select";
-import Label from "../../components/Label";
 
 const CreateProduct = () => {
   const defaultProductValue = {

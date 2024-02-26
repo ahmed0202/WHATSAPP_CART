@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "../../../components/Button";
 import { useSelector } from "react-redux";
-
 import { selectProductById } from "../../products/productsSlice";
 import CurrencyFormatter from "../../../components/CurrencyFormatter";
 import { selectOrderItemById } from "../orderItemsSlice";
