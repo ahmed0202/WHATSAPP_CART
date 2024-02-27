@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "c644958f-c5da-473d-9ccb-4fb26cadaa33",
+		"name": "whatsapp_cart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "8067940"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/BB/Downloads/whatsapp_cart/2860988046a7552f49b2377a081f4f1f.jpg"
+								},
+								{
+									"key": "product",
+									"value": "{    \"category_id\":5,\n    \"product_name\":\"nice photo v23\",\n    \"product_code\":\"5990\",\n    \"product_price\":25000\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{url}}/products/create"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProducts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{url}}/products"
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/BB/Downloads/whatsapp_cart/9afa28db280a2aee75022d983d803f26.jpg"
+								},
+								{
+									"key": "product",
+									"value": "{\n    \"product_id\": 10,\n    \"product_price\": 50000,\n\"product_status\":1\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{url}}/products/update"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/products/:product_id/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								":product_id",
+								"delete"
+							],
+							"variable": [
+								{
+									"key": "product_id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "createCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_name\":\"plant\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/categories/create"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/categories/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"categories",
+								""
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_id\": 11,\r\n    \"category_name\": \"plants\"\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/categories/update"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/categories/:category_id/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"categories",
+								":category_id",
+								"delete"
+							],
+							"variable": [
+								{
+									"key": "category_id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "getAllOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "createOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/orders/create"
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_id\":1,\r\n    \"order_city\":\"erbil\",\r\n    \"order_town\":\"middle of city\",\r\n    \"order_delivery_address\":\"middle of city\",\r\n    \"order_phonenumber\":\"07501234567\",\r\n    \"order_comment\":\"tomorrow at noon in the middle of the city\",\r\n    \"order_status\":\"confirmed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/orders/update"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrder",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/orders/:order_id/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								":order_id",
+								"delete"
+							],
+							"variable": [
+								{
+									"key": "order_id",
+									"value": "47"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orderItems",
+			"item": [
+				{
+					"name": "createOrderItem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"order_id\":1,\r\n\"product_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/order-items/create"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrderItem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/order-items/?order_id=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order-items",
+								""
+							],
+							"query": [
+								{
+									"key": "order_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrderItem",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"order_item_id\":7,\r\n\"order_item_qty\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/order-items/update"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrderItem",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{url}}/order-items/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "files-resized",
+			"item": [
+				{
+					"name": "getFileByUri",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/files-resized/:file_uri?w=308&h=583",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"files-resized",
+								":file_uri"
+							],
+							"query": [
+								{
+									"key": "w",
+									"value": "308"
+								},
+								{
+									"key": "h",
+									"value": "583"
+								}
+							],
+							"variable": [
+								{
+									"key": "file_uri",
+									"value": "1708364242008-145552961.jpg"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000/api",
+			"type": "string"
+		}
+	]
+}
