@@ -92,7 +92,6 @@ const EditProduct = () => {
   };
 
   const handleDeleteProduct = async () => {
-    if (!canSave) return console.log("cant delete");
     try {
       await deleteProduct({ product_id: product.product_id }).unwrap();
       navigate("/");
@@ -275,11 +274,7 @@ const EditProduct = () => {
           </p>
         </div>
         <div className="my-5  flex justify-around sm:justify-end ">
-          <button
-            onClick={handleDeleteProduct}
-            className={`${!canSave ? "btn-disabled" : "btn-danger"} `}
-            disabled={!canSave}
-          >
+          <button onClick={handleDeleteProduct} className="btn-danger">
             Delete
           </button>
           <hr className="m-4 bg-transparent border-transparent" />

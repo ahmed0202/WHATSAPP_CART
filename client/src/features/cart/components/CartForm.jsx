@@ -54,7 +54,7 @@ const CartForm = ({ orderSelector }) => {
         order_phonenumber: order.order_phonenumber,
         order_comment: order?.order_comment || "no comment",
       }).unwrap();
-      Cookies.set("cart", JSON.stringify(data));
+      Cookies.remove("cart");
       alert("Do you want to send your cart to seller with whatsapp");
       sendCartToWhatsapp({
         cart_link: window.location.href,
@@ -99,7 +99,7 @@ const CartForm = ({ orderSelector }) => {
       setOrder({});
     }
   }, [orderItemsTotals.accumlatedQtyTotal]);
-  if (!order?.order_id) return <div>Loading</div>;
+  if (!order?.order_id) return <div>No Item Founded</div>;
 
   return (
     <div className="py-2 px-4 mt-4 h-max  lg:m-0 lg:col-span-4 rounded-lg border border-gray-300">
