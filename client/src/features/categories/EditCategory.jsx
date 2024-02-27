@@ -1,4 +1,4 @@
-import React, { seState } from "react";
+import React, { useState } from "react";
 import {
   selectAllCategories,
   useDeleteCategoryMutation,
