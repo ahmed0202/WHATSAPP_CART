@@ -14,7 +14,7 @@ const options = ["http://localhost:5173", "http://localhost:5000"];
 
 app.use(express.json());
 app.use(cors());
-// app.use(express.urlencoded({ extended: false }));
+
 app.use("/public", express.static("public"));
 
 app.get("/", (req, res) => {
@@ -23,4 +23,4 @@ app.get("/", (req, res) => {
 });
 app.use(require("./src/routes/routes"));
 
-app.listen(port, (req, res) => console.log("http://localhost:" + port));
+app.listen(port, () => console.log("http://localhost:" + port));

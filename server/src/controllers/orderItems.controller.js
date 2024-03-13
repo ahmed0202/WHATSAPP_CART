@@ -1,5 +1,5 @@
 const model = require("../models/orderItems.model");
-const { _204, _400, _500, _200, _201 } = require("../utils/apiRespones.util");
+const { _400, _500, _200, _201 } = require("../utils/apiRespones.util");
 const {
   throw_400,
   throw_500,

@@ -26,7 +26,6 @@ function App() {
         </Route>
 
         <Route path="category">
-          <Route index element={<CreateCategory />} />
           <Route element={<RequireAuth />}>
             <Route path="create" element={<CreateCategory />} />
             <Route path="edit" element={<EditCategory />} />
