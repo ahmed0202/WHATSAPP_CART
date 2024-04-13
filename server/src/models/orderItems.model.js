@@ -1,4 +1,3 @@
-const db = require("../db");
 const {
   queryGetResultError,
   mutationCreateResultError,
@@ -37,22 +36,7 @@ class OrderItemsModel {
       whereObjects: filterObjects,
     });
   };
-  // getAllOrderItemsWithProductByOrderId = async ({orderId}) => {
-  //   try {
-  //     const result = await db({
-  //       oi: this._oiTbName,
-  //       p: pModel._productTbName,
-  //     }).select({
-  //       [this._oiId]: `oi.${this._oiId}`,
-  //       [this._oiPrice]: `oi.${this._oiPrice}`,
-  //       [this._oiQty]: `oi.${this._oiQty}`,
-  //       [this._orderId]: `oi.${this._orderId}`,
-  //       [this._productId]: `oi.${this._orderId}`,
-  //       [pModel._productCode]: `oi.${this._productCode}`,
-  //     });
-  //   } catch (error) {}
 
-  // };
   createOrderItem = async (data) => {
     return await mutationCreateResultError({
       tableName: this._oiTbName,
