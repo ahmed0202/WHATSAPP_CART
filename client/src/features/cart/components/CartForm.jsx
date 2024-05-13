@@ -55,7 +55,7 @@ const CartForm = ({ orderSelector }) => {
         order_comment: order?.order_comment || "no comment",
       }).unwrap();
       Cookies.remove("cart");
-      alert("Do you want to send your cart to seller with whatsapp");
+      // alert("Do you want to send your cart to seller with whatsapp");
       sendCartToWhatsapp({
         cart_link: window.location.href,
         order: data,
@@ -206,12 +206,17 @@ const CartForm = ({ orderSelector }) => {
           Update Cart ({orderItemsTotals.accumlatedQtyTotal})
         </Button>
       ) : (
-        <Button
-          className={`mt-4 w-full ${!canSave && "btn-disabled"}`}
-          onClick={handleUpdateOrder}
-        >
-          Buy Now ({orderItemsTotals.accumlatedQtyTotal})
-        </Button>
+        <>
+          <a aria-label="Chat on WhatsApp" href="https://wa.me/+9647507250752">
+            <Button>Send Message To WhatsApp</Button>
+          </a>
+          <Button
+            className={`mt-4 w-full ${!canSave && "btn-disabled"}`}
+            onClick={handleUpdateOrder}
+          >
+            Buy Now ({orderItemsTotals.accumlatedQtyTotal})
+          </Button>
+        </>
       )}
     </div>
   );

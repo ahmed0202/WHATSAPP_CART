@@ -8,7 +8,8 @@ const sendCartToWhatsapp = ({ order, cart_link }) => {
     order.order_id
   }%0a%0a`;
 
-  const waUrl = `https://wa.me/${sellerPhonenumber}?text=${customerPhonenumber}${city}${totalItems}${totalAmount}${cartLink}`;
+  const waUrl = `https://wa.me/${sellerPhonenumber}/?text=${customerPhonenumber}${city}${totalItems}${totalAmount}${cartLink}`;
+
   window.open(waUrl, "_blank").focus();
 };
 
