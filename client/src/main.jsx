@@ -10,7 +10,7 @@ import { productsExApiSlice } from "./features/products/productsSlice.js";
 
 store.dispatch(categoriesExApiSlice.endpoints.getCategories.initiate());
 store.dispatch(productsExApiSlice.endpoints.getProducts.initiate());
-
+console.log(process.env.VITE_API_SERVER);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>

@@ -11,6 +11,12 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: `${process.env.VITE_API_SERVER}`,
+        changeOrigin: true,
+        secure: false,
+        onProxyReq(proxyReq, req, res) {
+          // Add custom headers or modify existing headers if needed
+          proxyReq.setHeader("X-Special-Proxy-Header", "foobar");
+        },
       },
     },
   },
