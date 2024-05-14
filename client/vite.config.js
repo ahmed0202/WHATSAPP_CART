@@ -10,7 +10,7 @@ export default defineConfig({
     host: true,
     proxy: {
       "/api": {
-        target: `${process.env.VITE_API_SERVER}:${process.env.VITE_API_PORT}`,
+        target: `${process.env.VITE_API_SERVER}`,
       },
     },
   },
