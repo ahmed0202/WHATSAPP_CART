@@ -4,10 +4,6 @@ const cors = require("cors");
 const express = require("express");
 const app = express();
 
-env.config({
-  path: `.env.${process.env.NODE_ENV || "dev"}`,
-});
-
 console.log("environment =", process.env.ENV);
 const port = process.env.PORT || 5000;
 const options = ["http://localhost:5173", "http://localhost:5000"];
